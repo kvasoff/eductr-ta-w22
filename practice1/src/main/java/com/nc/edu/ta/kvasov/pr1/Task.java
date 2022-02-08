@@ -1,73 +1,87 @@
 package com.nc.edu.ta.kvasov.pr1;
 
-class Task {
-    // Переменные
+public class Task {
+    // Методы получения и установки заголовка задачи:
     private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // Методы проверки статуса задачи:
     private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    // Методы задания и получения времени оповещения о задаче:
     private int time;
     private int start;
     private int end;
     private int repeat;
-    private int startTime;
-    private int repeatInterval;
-    private boolean isRepeated;
-    private String toString;
+    private boolean repeated;
 
-    // Методы получения и установки заголовка задачи
-    String getTitle() {
-        return title;
-    }
-    void setTitle(String title) {
-        this.title = title;
+    public int getTime() {
+        return time;
     }
 
-    // Методы проверки статуса задачи
-    boolean isActive() {
-        return active;
-    }
-    void setActive(boolean active) {
-        this.active = active;
-    }
-
-    // Методы задания и получения времени оповещения о задаче
-    void setTime(int time) {
+    public void setTime(int time) {
         this.time = time;
     }
-    void setTime(int start, int end, int repeat) {
+
+    public void setTime(int start, int end, int repeat) {
         this.start = start;
         this.end = end;
         this.repeat = repeat;
     }
-    int getTime() {
-        return time;
+
+    public int getStartTime() {
+        return start;
     }
-    int getStartTime() {
-        return startTime;
-    }
-    int EndTime() {
+
+    public int getEndTime() {
         return end;
     }
-    int getRepeatInterval() {
-        return repeatInterval;
-    }
-    boolean isRepeated() {
-        return isRepeated;
+
+    public int getRepeatInterval() {
+        return repeat;
     }
 
-    // Метод, возвращающий описание данной задачи
-    public String toString()  {
-        return toString;
+    public boolean isRepeated() {
+        return repeated;
     }
 
-    // Метод, возвращающий время следующего оповещения, после указанного времени time (не включая его):
-    int nextTimeAfter(int time) {
+    @Override
+    public String toString() {
+        return "Task{" +
+                "title='" + title + '\'' +
+                ", time=" + time +
+                ", start=" + start +
+                ", end=" + end +
+                ", repeat=" + repeat +
+                '}';
+    }
+
+    public int nextTimeAfter(int time) {
         return time;
     }
-    // констуруторы
+
+    // Конструктор 1
     public Task(String title, int time) {
         this.title = title;
         this.time = time;
     }
+
+    // Конструктор 2
 
     public Task(String title, int start, int end, int repeat) {
         this.title = title;
@@ -75,9 +89,4 @@ class Task {
         this.end = end;
         this.repeat = repeat;
     }
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
 }
-
