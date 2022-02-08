@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/eductr-ta-w22.iml" filepath="$PROJECT_DIR$/.idea/eductr-ta-w22.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice0/practice.iml" filepath="$PROJECT_DIR$/practice0/practice.iml" />
-    </modules>
-  </component>
-</project>
