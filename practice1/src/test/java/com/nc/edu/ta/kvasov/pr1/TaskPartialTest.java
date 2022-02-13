@@ -37,6 +37,8 @@ public class TaskPartialTest {
     @Test
     public void testConstructorNonrepeated() {
         Task task = new Task("test", 10);
+        task.setTime(10, 10, 0);
+        task.setTime(10);
         assertFalse(task.isActive(), "active");
         assertEquals( 10, task.getTime(),"time");
         assertEquals( 10, task.getStartTime(),"start");
@@ -46,6 +48,7 @@ public class TaskPartialTest {
     @Test
     public void testConstructorRepeated() {
         Task task = new Task("test", 10, 100, 5);
+        task.setTime(10);
         assertFalse( task.isActive(), "active");
         assertEquals( 10, task.getTime(), "time");
         assertEquals( 10, task.getStartTime(), "start");
@@ -55,8 +58,9 @@ public class TaskPartialTest {
     }
     @Test
     public void testTimeNonRepeated() {
-        Task task = new Task("test", 0, 100, 15);
+        Task task = new Task("test", 0, 100, 0);
         task.setTime(50);
+        task.setTime(50, 50, 0);
         assertEquals( 50, task.getTime(),"time");
         assertEquals( 50, task.getStartTime(), "start");
         assertEquals( 50, task.getEndTime(),"end");
@@ -67,6 +71,7 @@ public class TaskPartialTest {
     public void testTimeRepeated() {
         Task task = new Task("test", 10);
         task.setTime(5, 20, 1);
+        task.setTime(5);
         assertEquals( 5, task.getTime(), "time");
         assertEquals( 5, task.getStartTime(), "start");
         assertEquals( 20, task.getEndTime(), "end");
