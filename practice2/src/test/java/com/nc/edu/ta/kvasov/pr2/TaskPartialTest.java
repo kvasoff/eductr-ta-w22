@@ -1,4 +1,4 @@
-package com.nc.edu.ta.kvasov.pr1;
+package com.nc.edu.ta.kvasov.pr2;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,6 @@ public class TaskPartialTest {
     @Test
     public void testConstructorRepeated() {
         Task task = new Task("test", 10, 100, 5);
-        task.setTime(10);
         assertFalse( task.isActive(), "active");
         assertEquals( 10, task.getTime(), "time");
         assertEquals( 10, task.getStartTime(), "start");
@@ -71,7 +70,6 @@ public class TaskPartialTest {
     public void testTimeRepeated() {
         Task task = new Task("test", 10);
         task.setTime(5, 20, 1);
-        task.setTime(5);
         assertEquals( 5, task.getTime(), "time");
         assertEquals( 5, task.getStartTime(), "start");
         assertEquals( 20, task.getEndTime(), "end");
