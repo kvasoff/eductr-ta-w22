@@ -1,1 +1,0 @@
-# eductr-ta-w22
